@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt br">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Freddy Fazbear</title>
+    <script src="script.js"></script>
+</head>
+
+<body background="img/bg.png">
+    <iframe id="menurespons" src="menu.html" frameborder="0" class="menu-frame" width="100%" style="position: absolute;"
+        allowfullscreen></iframe>
+    &nbsp;
+    <div style="margin-top: 100px;"></div>
+    <div class="content">
+        Pagina principal<br>
+        Minha mão no seu pau
+
+    </div>
+    <script>
+        var iframe = document.getElementById('menurespons');
+        iframe.onload = function () {
+            var links = iframe.contentWindow.document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function (event) {
+                    event.preventDefault(); // Impede o comportamento padrão de navegação do link
+                    var href = this.getAttribute('href');
+
+                    // Atualiza a URL da página principal com base no link clicado dentro do iframe
+                    window.location.href = href;
+                });
+            }
+        };
+    </script>
+
+</body>
+
+</html>
