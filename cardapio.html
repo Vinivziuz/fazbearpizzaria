@@ -7,10 +7,70 @@
   <title>Freddy Fazbear</title>
   <script src="script.js"></script>
 </head>
-<body background="img/bg.png">
+<body background="img/bg2.png">
   <iframe src="menu.html" frameborder="0" class="menu-frame" width="100%"></iframe>
+  <div style="height: 600px; float: left;">
+  <img src="img/fazbear.gif">
+</div>
+
+  <div class="cardapio">
+    <div class="addpizza">
+      <img src="img/pzfrangocatupiry.png" width="160px">
+      <h4>Frango c/ Catupiry</h4><Br>
+      <img src="img/menos.png" width="20%" onclick="diminuirNumero('frango')">
+      <input id="frango" name="frango" type="number" class="numeropizza" value="0">
+      <a></a>
+      <img src="img/mais.png" width="20%" onclick="aumentarNumero('frango')">
+    </div>
+    <div class="addpizza" style="margin-left: 40px;">
+      <img src="img/pzcarnedesfiada.png" width="160px">
+      <h4>Carne Desfiada</h4><Br>
+      <img src="img/menos.png" width="20%" onclick="diminuirNumero('carne')">
+      <input id="carne" name="carne" type="number" class="numeropizza" value="0">
+      <a></a>
+      <img src="img/mais.png" width="20%" onclick="aumentarNumero('carne')">
+    </div>
+  </div>
 
 
-    
+  <div class="cardapio" id="roxo">
+    <div class="addpizza" style="margin-left: 40px;">
+      <img src="img/pzpeperoni.png" width="160px">
+      <h4>Calabreso</h4><Br>
+      <img src="img/menos.png" width="20%" onclick="diminuirNumero('calab')">
+      <input id="calab" name="calab" type="number" class="numeropizza" value="0">
+      <a></a>
+      <img src="img/mais.png" width="20%" onclick="aumentarNumero('calab')">
+    </div>
+    <div class="addpizza" style="margin-left: 40px;">
+      <img src="img/pzprestigio.png" width="160px">
+      <h4>Prestígio</h4><Br>
+      <img src="img/menos.png" width="20%" onclick="diminuirNumero('prest')">
+      <input id="prest" name="prest" type="number" class="numeropizza" value="0">
+      <a></a>
+      <img src="img/mais.png" width="20%" onclick="aumentarNumero('prest')">
+    </div>
+  </div>
+
+
+  <div class="cardapio" id="vermelho">
+    <div class="addpizza" style="margin-left: 40px;">
+      <img src="img/pzitaliana.png" width="160px">
+      <h4>À Moda Italiana</h4><Br>
+      <img src="img/menos.png" width="20%" onclick="diminuirNumero('italia')">
+      <input id="italia" name="italia" type="number" class="numeropizza" value="0">
+      <a></a>
+      <img src="img/mais.png" width="20%" onclick="aumentarNumero('italia')">
+    </div>
+    <div class="addpizza" style="margin-left: 40px;">
+      <img src="img/pzmoda.png" width="160px">
+      <h4>À Moda da Casa</h4><Br>
+      <img src="img/menos.png" width="20%" onclick="diminuirNumero('moda')">
+      <input id="moda" name="moda" type="number" class="numeropizza" value="0">
+      <a></a>
+      <img src="img/mais.png" width="20%" onclick="aumentarNumero('moda')">
+    </div>
+  </div>
 </body>
+
 </html>

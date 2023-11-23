@@ -2,14 +2,12 @@ function toggleMenu() {
   var menuList = document.querySelector('.menu-list');
   var menu = document.querySelector('.menu');
 
-  // Toggle a classe 'show' para controlar a visibilidade do menu
   menuList.classList.toggle('show');
 
-  // Atualize a classe do menu para ativar a transição de altura máxima
   if (menuList.classList.contains('show')) {
     menu.style.maxHeight = 170 + 'px';
   } else {
-    menu.style.maxHeight = null; // Volte à altura máxima automática
+    menu.style.maxHeight = null;
   }
 }
 
@@ -22,4 +20,12 @@ menuLinks.forEach(function (link) {
   });
 });
 
-//links clicados no iframe valem pra toda pagina
+//botões customizados do cardápio
+function aumentarNumero(pizza) {
+  var inputNumero = document.getElementById(pizza);
+  inputNumero.value = parseInt(inputNumero.value) + 1;
+}
+function diminuirNumero(pizza) {
+  var inputNumero = document.getElementById(pizza);
+  inputNumero.value = parseInt(inputNumero.value) - 1;
+}

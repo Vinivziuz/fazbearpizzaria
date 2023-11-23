@@ -11,6 +11,19 @@
   <iframe src="menu.html" frameborder="0" class="menu-frame" width="100%"></iframe>
 
 
-    
+  <script>
+    var iframe = document.getElementById('menurespons');
+    iframe.onload = function () {
+        var links = iframe.contentWindow.document.getElementsByTagName('a');
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function (event) {
+                event.preventDefault(); // Impede o comportamento padrão de navegação do link
+                var href = this.getAttribute('href');
+                // Atualiza a URL da página principal com base no link clicado dentro do iframe
+                window.location.href = href;
+            });
+        }
+    };
+</script>
 </body>
 </html>

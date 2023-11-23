@@ -8,28 +8,85 @@ body {
 
 }
 
-/* conteúdo da página */
+/* CONTEÚDO DA PÁGINA E RESTOS */
 .content {
   margin-left: 5%;
   margin-right: 5%;
   background-color: rgba(0, 0, 0, 0.904);
   border-radius: 20px;
-  width: 1000px;
+  width: 50%;
   padding: 20px;
+  text-align: center;
 }
 
-/* menu responsivo */
+.logo {
+  width: 20%;
+}
+.foto{
+  border: solid 2px white;
+  box-shadow: 0 0 10px rgba(255, 254, 254, 0.664);
+  width: 500px;
+}
+@media (max-width: 1000px) {
+  .foto{
+    width: 50%;
+  }
+}
+
+.cardapio{
+  float: right;
+  margin-left: 0;
+  background-color: rgba(0, 0, 0, 0.904);
+  margin-right: 5%;
+  margin-left: 3%;
+  margin-top: 40px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 450px;
+  border: solid 1px rgb(235, 202, 141);
+  box-shadow: 0 0 10px rgba(235, 202, 141, 0.753);
+  display: flex;
+  min-width: 450px;
+}
+
+#roxo{
+  border: solid 1px rgb(182, 141, 235);
+  box-shadow: 0 0 10px rgba(177, 141, 235, 0.753);
+}
+
+#vermelho{
+  border: solid 1px rgb(235, 118, 118);
+  box-shadow: 0 0 10px rgba(230, 107, 107, 0.753);
+}
+
+.addpizza{
+margin-left: 40px;
+margin-top: 10px;
+border: solid 2px white;
+width: 160px;
+text-align: center;
+}
+.numeropizza{
+  width: 30px;
+  margin-left: 10px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  color: white;
+}
+
+/* MENU RESPONSIVO */
 .menu {
   background-color: #000000e1;
   color: white;
   text-align: center;
   padding: 10px;
   overflow: hidden;
-  max-height: 35px;
+  max-height: 33px;
   transition: max-height 0.3s ease;
 }
 
-.menu-frame{
+.menu-frame {
   height: inherit;
 }
 
@@ -42,12 +99,17 @@ body {
 .menu-list li a {
   text-decoration: none;
   color: aliceblue;
+  padding: 20px;
 }
 
 .menu-list li {
   display: inline-block;
-  margin-right: 20px;
+  padding: 15px;
   margin-bottom: 9px;
+  border-radius: 10px;
+}
+.menu-list li:hover {
+  background-color: rgb(77, 31, 0);
 }
 
 .menu.show {
@@ -59,7 +121,6 @@ body {
   .menu-list {
     display: none;
     width: inherit;
-    background-color: #33333327;
   }
 
   .menu-list.show {
@@ -70,7 +131,7 @@ body {
     display: block;
   }
 
-  /* animação do botãozinho do menu */
+  /* ANIMAÇÃO DO BOTÃO DO MENU */
 }
 
 #checkbox {
@@ -131,4 +192,143 @@ body {
 #checkbox:checked+.toggle {
   transition-duration: .5s;
   transform: rotate(180deg);
+}
+
+/* REGISTRO NO SITE: */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #f7d0ac;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #df832e;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "☎";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+}
+
+.message, 
+.signin {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a:hover {
+  text-decoration: underline rgb(241, 228, 217);
+}
+
+.signin a {
+  color: #ff7b00;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  color: #ff8800;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.input {
+  font-size: medium;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+  background-color: #ff9100;
+}
+
+.submit:hover {
+  background-color: #ff880096;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
 }

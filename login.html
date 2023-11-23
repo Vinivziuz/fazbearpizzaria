@@ -7,10 +7,61 @@
   <title>Freddy Fazbear</title>
   <script src="script.js"></script>
 </head>
+
 <body background="img/bg.png">
   <iframe src="menu.html" frameborder="0" class="menu-frame" width="100%"></iframe>
+  <div class="content" style="width: fit-content; margin-left: 20%;">
+    <form class="form"  action="cardapio.html">
+      <p class="title">&nbsp;Registrar: </p>
+      <p class="message">Para ter seu endereço salvo, basta se registrar agora! </p>
+      <div class="flex">
+        <label>
+          <input class="input" type="text" placeholder="" required="" size="15">
+          <span>Nome</span>
+        </label>
 
+        <label style="margin-left: 20px;">
+          <input class="input" type="text" placeholder="" required="" size="10">
+          <span>Celular</span>
+        </label>
+      </div>
 
-    
+      <label>
+        <input class="input" type="text" placeholder="" required="">
+        <span>Endereço</span>
+      </label>
+
+      <label>
+        <input class="input" type="text" placeholder="" required="">
+        <span>Bairro</span>
+      </label>
+      <label>
+        <input class="input" type="password" placeholder="" required="">
+        <span>Senha</span>
+      </label>
+      <button class="submit">Registrar-se</button>
+      <p class="signin">Esqueceu sua senha ? <a href="#">Esqueci :P</a> </p>
+    </form>
+  </div>
+  <div style="margin-left: 30%;">
+    <img src="img/fazbear.gif" width="150px">
+
+  </div>
+
+  <script>
+    var iframe = document.getElementById('menurespons');
+    iframe.onload = function () {
+      var links = iframe.contentWindow.document.getElementsByTagName('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function (event) {
+          event.preventDefault(); // Impede o comportamento padrão de navegação do link
+          var href = this.getAttribute('href');
+          // Atualiza a URL da página principal com base no link clicado dentro do iframe
+          window.location.href = href;
+        });
+      }
+    };
+  </script>
 </body>
+
 </html>

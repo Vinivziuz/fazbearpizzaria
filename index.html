@@ -14,8 +14,15 @@
     &nbsp;
     <div style="margin-top: 100px;"></div>
     <div class="content">
-        Pagina principal<br>
-        Minha mão no seu pau
+        <img src="img/logo.png" class="logo"><br>
+        
+        <h1>Atendemos pedidos por todo o país!</h1>
+            <a href="login.html"><button>Faça já o seu pedido!</button></a><br><br>
+            <div style="text-align: left;">
+                <h3>
+                Conheça o estabelecimento:&ensp;</h3>
+                <img src="img/lugar.jpg" class="foto">
+            </div>
 
     </div>
     <script>
@@ -26,7 +33,6 @@
                 links[i].addEventListener('click', function (event) {
                     event.preventDefault(); // Impede o comportamento padrão de navegação do link
                     var href = this.getAttribute('href');
-
                     // Atualiza a URL da página principal com base no link clicado dentro do iframe
                     window.location.href = href;
                 });
