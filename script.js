@@ -1,18 +1,13 @@
 function toggleMenu() {
   var menuList = document.querySelector('.menu-list');
   var menu = document.querySelector('.menu');
-  var iframe = parent.document.getElementById('menurespons');
 
-  var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
- 
   menuList.classList.toggle('show');
 
   if (menuList.classList.contains('show')) {
     menu.style.maxHeight = 570 + 'px';
-    iframeDocument.style.maxHeight = '570px';
   } else {
     menu.style.maxHeight = null;
-    iframeDocument.style.maxHeight = '170px';
   }
 }
 
