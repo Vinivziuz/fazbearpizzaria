@@ -4,16 +4,15 @@ function toggleMenu() {
   var iframe = parent.document.getElementById('menurespons');
 
   var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-  var menuiframe = iframeDocument.querySelector('.menu-frame');
  
   menuList.classList.toggle('show');
 
   if (menuList.classList.contains('show')) {
     menu.style.maxHeight = 570 + 'px';
-    menuiframe.style.height = '570px';
+    iframeDocument.style.height = '570px';
   } else {
     menu.style.maxHeight = null;
-    menuiframe.style.height = '170px';
+    iframeDocument.style.height = '170px';
   }
 }
 
