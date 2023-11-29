@@ -17,6 +17,78 @@ body {
   width: 50%;
   padding: 20px;
   text-align: center;
+  box-shadow: 0 0 20px #0000008e;
+}
+.pagar{
+  width: fit-content;
+  height: 15px;
+  border-radius: 10px;
+}
+.fazerpedido{
+  border: solid rgb(214, 161, 117) 2px;
+  background-color: #cc9058;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  padding: 5px;
+  border-radius: 4px;
+  color: #000000;
+}
+.fazerpedido:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #d685288e;
+  background-color: #d68528;
+  color: #f1eded;
+}
+.statspedido {
+  width: 10%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: inherit;
+  background-color: #9bb4c5;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow:  0 0 10px rgba(73, 126, 226, 0.664);
+  margin: 5%;
+  text-align: center;
+  float: left;
+  min-width: 120px;
+  text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+#enviado{
+  background-image: url(img/enviado.png);
+  animation: mudarCor 0.5s linear 1s forwards; /* 2s pra transição, 3s de atraso */
+}
+#confirmado{
+  background-image: url(img/confirmado.png);
+  animation: mudarCor 0.5s linear 3s forwards; /* 2s pra transição, 3s de atraso */
+}
+#entregando{
+  background-image: url(img/entrega.png);
+  animation: mudarCor 0.5s linear 15s forwards; /* 10s pra transição, 3s de atraso */
+}
+
+@keyframes mudarCor {
+  to {
+    background-color: #03b15f;
+    box-shadow:  0 0 10px rgba(22, 201, 147, 0.664);
+    color: #000000;
+  }
+}
+
+.fieldpag{
+  border-radius: 15px;
+  border-style: dotted;
+  border-color: #cc9058;
+}
+
+.audioplayer{
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
 .logo {
@@ -34,7 +106,7 @@ body {
 }
 
 .cardapio{
-  float: right;
+  float: left;
   margin-left: 0;
   background-color: rgba(0, 0, 0, 0.904);
   margin-right: 5%;
@@ -66,6 +138,7 @@ border: solid 2px white;
 width: 160px;
 text-align: center;
 }
+
 .numeropizza{
   width: 30px;
   margin-left: 10px;
@@ -73,6 +146,20 @@ text-align: center;
   background-color: rgba(255, 255, 255, 0);
   border: 0;
   color: white;
+}
+#easteregg{
+  transition: opacity 1s ease;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#vaineymar{
+  border: 0;
+}
+#vaineymar:focus{
+  box-shadow: 0 0 10px rgba(235, 202, 141, 0.897);
 }
 
 /* MENU RESPONSIVO */
@@ -84,10 +171,11 @@ text-align: center;
   overflow: hidden;
   max-height: 33px;
   transition: max-height 0.3s ease;
+  box-shadow: 0 0 20px #0000008e;
 }
 
 .menu-frame {
-  height: inherit;
+  height: 470px;
 }
 
 .menu-list {
@@ -107,17 +195,21 @@ text-align: center;
   padding: 15px;
   margin-bottom: 9px;
   border-radius: 10px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 .menu-list li:hover {
-  background-color: rgb(77, 31, 0);
+  background-color: rgb(221, 126, 62);
+  box-shadow:  0 0 20px #d685288e;
+  transform: scale(1.1);
 }
 
 .menu.show {
-  max-height: 200px;
+  max-height: 600px;
   margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .menu-list {
     display: none;
     width: inherit;
@@ -156,6 +248,7 @@ text-align: center;
   height: 4px;
   background-color: rgb(201, 125, 25);
   border-radius: 4px;
+  box-shadow: 0 0 20px #d685288e;;
 }
 
 #bar2 {
@@ -331,4 +424,146 @@ text-align: center;
     transform: scale(1.8);
     opacity: 0;
   }
+}
+
+/* TELA DE CARREGAMENTO */
+.loader {
+  /* cor */
+  --clr: #5f3a11;
+  /* tempo de carregamento */
+  --load-time: 2s;
+  outline: 5px solid var(--clr);
+  outline-offset: 5px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5rem;
+  padding: 1rem 5rem;
+  box-shadow: 0 0 20px #f3b7728e;
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--clr);
+  z-index: 2;
+  animation: loading var(--load-time) ease-in-out forwards;
+}
+
+@keyframes loading {
+  to {
+    width: 100%;
+    background-color: #df832e;
+  }
+}
+
+.fade-button {
+  background-color: #5f3a11;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.fade-button:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #d685288e;
+  background-color: #d68528;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0); /* Fundo preto com transparência */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Garante que esteja acima de outros elementos */
+  opacity: 1; /* Inicialmente opaco */
+  transition: opacity 0.5s ease; /* Transição de opacidade para um efeito de fade */
+}
+/* FEEDBACK */
+.feedback{
+  display: flex; 
+  width: inherit;
+  align-items: center;
+  justify-content: center;
+}
+.aviso{
+  margin: 5%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 10px;
+  border: dotted 2px white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 254, 254, 0.192);
+  background-color: #080807;
+}
+
+.card {
+  width: 260px;
+  background-color: #ffffffd0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.562)
+}
+
+.chat-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.chat-window {
+  height: 220px;
+  overflow-y: scroll;
+}
+
+.message-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.send-button {
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }

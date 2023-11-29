@@ -7,26 +7,91 @@
   <title>Freddy Fazbear</title>
   <script src="script.js"></script>
 </head>
-<body background="img/bg.png">
+
+<body background="img/bg3.png" style="background-size: cover;">
   <iframe id="menurespons" src="menu.html" frameborder="0" class="menu-frame" width="100%" style="position: absolute;"
-  allowfullscreen></iframe>
+    allowfullscreen></iframe>
   &nbsp;
   <div style="margin-top: 100px;"></div>
+  <div class="content" style="margin-left: 20%; margin-right: 5%; float: left; width: fit-content;">
+    <form>
+      <fieldset class="fieldpag">
+      <legend>Finalizar Pedido</legend>
+      <label style="text-align: left;">
+        <p>
+        Borda:<br><br>
+        <input type="radio" value="1" name="borda"> Sem borda<br>
+        <input type="radio" value="2" name="borda"> Presunto<br>
+        <input type="radio" value="3" name="borda"> Chocolate<br>
+        <input type="radio" value="4" name="borda"> Picles<br>
+        <input type="radio" value="5" name="borda"> Pequi<br>
+      </p>
+      <p>
+        Adicional:<br><br>
+        <input type="checkbox" value="1" name="adc"> Cebolas<br>
+        <input type="checkbox" value="2" name="adc"> Tomates<br>
+        <input type="checkbox" value="3" name="adc"> Milho<br>
+        <input type="checkbox" value="4" name="adc"> Papaya<br>
+        <input type="checkbox" value="5" name="adc"> Linguiça Toscana<br>
+        <input type="checkbox" value="6" name="adc"> Uvas<br>
+        <input type="checkbox" value="7" name="adc"> Bagre<br>
+        <input type="checkbox" value="8" name="adc"> Farofa<br>
+      </p>
+      </label>
+      <p style="text-align: left;">
+        Observações:<br><br>
+        <textarea id="vaineymar" type="text" rows="3" cols="30" placeholder="Observações"></textarea>
+      </p>
+    </fieldset>
+    </form>
+  </div>
+  <div class="content" style="margin-left: 5%; margin-right: 20%; float: right; width: fit-content;">
+    <form action="entrega.html">
+      <fieldset class="fieldpag">
+      <legend>Pagamento</legend>
+      <label>
+        <p>
+        Método de pagamento:&ensp;
+        <select id="vaineymar" style="background-color: rgb(236, 227, 218);" required="">
+          <option value>-Selecione-</option>
+          <option value="DN">Dinheiro</option>
+          <option value="CC">Cartão de Crédito</option>
+          <option value="CD">Cartão de Débito</option>
+          <option value="EC">Escambo</option>
+          <option value="SAL">Sal</option>
+          <option value="DRC">Dracmas</option>
+        </select>
+      </p><br>
+      </label>
+      <p  style="text-align: left;">
+        Código de Desconto:
+        <input id="vaineymar" type="text" placeholder="ex.: Fazbear10" autocomplete="off" size="15"/>
+      </p>
+      <p style="text-align: left;">
+        CPF na nota:
+        <input id="vaineymar" type="text" placeholder="xxx.xxx.xxx-xx" autocomplete="off" size="15"/>
+      </p>
+      <Br>
+      <a><button class="fazerpedido">Acompanhar pedido -></button></a>
+    </fieldset>
+    </form>
+  </div>
 
 
   <script>
     var iframe = document.getElementById('menurespons');
     iframe.onload = function () {
-        var links = iframe.contentWindow.document.getElementsByTagName('a');
-        for (var i = 0; i < links.length; i++) {
-            links[i].addEventListener('click', function (event) {
-                event.preventDefault(); // Impede o comportamento padrão de navegação do link
-                var href = this.getAttribute('href');
-                // Atualiza a URL da página principal com base no link clicado dentro do iframe
-                window.location.href = href;
-            });
-        }
+      var links = iframe.contentWindow.document.getElementsByTagName('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function (event) {
+          event.preventDefault(); // Impede o comportamento padrão de navegação do link
+          var href = this.getAttribute('href');
+          // Atualiza a URL da página principal com base no link clicado dentro do iframe
+          window.location.href = href;
+        });
+      }
     };
-</script>
+  </script>
 </body>
+
 </html>

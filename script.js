@@ -1,13 +1,19 @@
 function toggleMenu() {
   var menuList = document.querySelector('.menu-list');
   var menu = document.querySelector('.menu');
+  var iframe = document.getElementById('menurespons');
+
+  var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+  var menuiframe = iframeDocument.querySelector('.menu-frame');
 
   menuList.classList.toggle('show');
 
   if (menuList.classList.contains('show')) {
-    menu.style.maxHeight = 170 + 'px';
+    menu.style.maxHeight = 570 + 'px';
+    menuiframe.style.height = '570px';
   } else {
     menu.style.maxHeight = null;
+    menuiframe.style.height = '170px';
   }
 }
 

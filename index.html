@@ -6,26 +6,77 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Freddy Fazbear</title>
     <script src="script.js"></script>
+    <style>
+        body {
+          margin: 0;
+          overflow: hidden; /* Para garantir que a barra de rolagem não apareça */
+        }
+      </style>
 </head>
-
 <body background="img/bg.png">
+    <div class="overlay" id="overlay">
+        <div class="loader" id="barra"></div>
+        <button id="botao" class="fade-button" onclick="fadeContent()" style="display: none;"> Entrar </button>
+      </div>
+    <div id="pagina" style="display: none;">
     <iframe id="menurespons" src="menu.html" frameborder="0" class="menu-frame" width="100%" style="position: absolute;"
         allowfullscreen></iframe>
     &nbsp;
     <div style="margin-top: 100px;"></div>
+    <audio id="musica" src="freddyfazbear.mp3" preload="auto"></audio>
     <div class="content">
         <img src="img/logo.png" class="logo"><br>
-        
-        <h1>Atendemos pedidos por todo o país!</h1>
-            <a href="login.html"><button>Faça já o seu pedido!</button></a><br><br>
-            <div style="text-align: left;">
-                <h3>
-                Conheça o estabelecimento:&ensp;</h3>
-                <img src="img/lugar.jpg" class="foto">
-            </div>
 
+        <h1>Atendemos pedidos por todo o país!</h1>
+        <a href="login.html"><button class="fazerpedido">Faça já o seu pedido!</button></a><br><br>
+        <div style="text-align: left; float: left;">
+            <h3>
+                Conheça o estabelecimento:&ensp;</h3>
+            <img src="img/lugar.jpg" class="foto">
+        </div>
+        <img id="easteregg" src="img/fazbear.gif" width="32%" style="opacity: 0;">
     </div>
+</div>
     <script>
+        // Carregamento
+        setTimeout(function (){
+            var barra = document.getElementById('barra');
+            var botao = document.getElementById('botao');
+            barra.style.display = 'none';
+            botao.style.display = 'block';
+        }, 2100);
+
+        function fadeContent() {
+            var overlay = document.getElementById('overlay');
+            var pagina = document.getElementById('pagina');
+
+            // faz o overlay desaparecer com um fade
+            overlay.style.opacity = 0;
+            pagina.style.display = 'block';
+
+            // depois da transição de opacidade, oculta o overlay e mostra o conteúdo
+            setTimeout(function () {
+                overlay.style.display = 'none';
+            }, 500); // 500 milisegundos (0.5 seg)
+
+            // toca a musiquinha
+            var musica = document.getElementById('musica')
+            if(musica.paused){
+                musica.play();
+            }else{
+                musica.pause();
+            }
+            // easteregg do freddynho
+            setTimeout(function () {
+                var easteregg = document.getElementById('easteregg');
+                easteregg.style.opacity = 1;
+            }, 26570); // 26570 milisegundos (26.57 seg)
+            setTimeout(function () {
+                var easteregg = document.getElementById('easteregg');
+                easteregg.style.opacity = 0;
+            }, 34550); // 34.550 milisegundos (34.55 seg)
+        }
+        //---------------------------------------------------------------
         var iframe = document.getElementById('menurespons');
         iframe.onload = function () {
             var links = iframe.contentWindow.document.getElementsByTagName('a');
@@ -39,7 +90,6 @@
             }
         };
     </script>
-
 </body>
 
 </html>
