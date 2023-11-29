@@ -1,11 +1,11 @@
 function toggleMenu() {
   var menuList = document.querySelector('.menu-list');
   var menu = document.querySelector('.menu');
-  var iframe = document.getElementById('menurespons');
+  var iframe = parent.document.getElementById('menurespons');
 
   var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
   var menuiframe = iframeDocument.querySelector('.menu-frame');
-
+ 
   menuList.classList.toggle('show');
 
   if (menuList.classList.contains('show')) {
