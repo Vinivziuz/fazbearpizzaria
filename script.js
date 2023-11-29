@@ -9,10 +9,10 @@ function toggleMenu() {
 
   if (menuList.classList.contains('show')) {
     menu.style.maxHeight = 570 + 'px';
-    iframeDocument.style.height = '570px';
+    iframeDocument.style.maxHeight = '570px';
   } else {
     menu.style.maxHeight = null;
-    iframeDocument.style.height = '170px';
+    iframeDocument.style.maxHeight = '170px';
   }
 }
 
